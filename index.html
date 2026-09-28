@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Sedang Dalam Pemeliharaan | DPUPR</title>
+  <meta name="description" content="Website Dinas Pekerjaan Umum dan Penataan Ruang sedang dalam pemeliharaan.">
+
+  <!-- Google Fonts: Poppins (heading) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== LAYER BACKGROUND (dekoratif) ===== -->
+  <div class="bg-grid" aria-hidden="true"></div>   <!-- grid blueprint -->
+  <div class="bg-shapes" aria-hidden="true">       <!-- bentuk geometris transparan -->
+    <span class="shape s1"></span>
+    <span class="shape s2"></span>
+    <span class="shape s3"></span>
+    <span class="road"></span>                     <!-- garis marka jalan -->
+  </div>
+  <canvas id="particles" aria-hidden="true"></canvas> <!-- partikel (diatur di script.js) -->
+
+  <!-- ===== TOP BAR KONTAK (ubah sesuai data instansi) ===== -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="tel:0247608368">Telp: (024) 7608368</a>
+      <a href="mailto:dpupr@jatengprov.go.id">Email: dpupr@jatengprov.go.id</a>
+    </div>
+  </div>
+
+  <!-- ===== 1. NAVBAR ===== -->
+  <header class="navbar reveal">
+    <a href="#beranda" class="brand">
+      <!-- Ganti file assets/logo.png dengan logo asli DPUPR.
+           Jika file belum ada, badge "PU" tampil otomatis (lihat script.js). -->
+      <img src="assets/logo.png" alt="DPUPR Provinsi Jawa Tengah" class="brand-logo" id="brandLogo">
+      <span class="brand-fallback" id="brandFallback" hidden>PU</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="https://dpupr.jatengprov.go.id/">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 2. HERO / MAINTENANCE ===== -->
+    <section class="hero" id="beranda">
+      <div class="hero-text">
+        <span class="badge reveal">Pemeliharaan Sistem</span>
+        <h1 class="reveal">WEBSITE SEDANG DALAM <span class="accent">PEMELIHARAAN</span></h1>
+        <p class="reveal">Kami sedang melakukan peningkatan dan pemeliharaan sistem untuk memberikan pelayanan informasi yang lebih baik.</p>
+
+        <div class="actions reveal">
+          <!-- Mengarah ke website resmi DPUPR -->
+          <a href="https://dpupr.jatengprov.go.id/" class="btn btn-primary">Kembali ke Beranda</a>
+          <a href="mailto:dpupr@jatengprov.go.id" class="btn btn-ghost">Hubungi Kami</a>
+        </div>
+
+        <!-- ===== 3. INDIKATOR PROGRESS (animasi saja, tanpa persentase) ===== -->
+        <div class="progress-box reveal" role="status" aria-live="polite">
+          <div class="progress-head">
+            <svg class="gear" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.5 7.5 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.5 7.5 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" transform="translate(-1 0)"/></svg>
+            <strong>Maintenance in Progress</strong>
+            <span class="status-text" id="statusText">Memeriksa sistem…</span>
+          </div>
+          <div class="progress-track"><div class="progress-bar"></div></div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi (ganti dengan assets/illustration.svg milik Anda jika ada) -->
+      <div class="hero-art reveal">
+        <img src="assets/illustration.svg" alt="Ilustrasi pekerja konstruksi, jembatan, dan gedung" class="float">
+      </div>
+    </section>
+
+    <!-- ===== 4. INFORMASI ===== -->
+    <section class="info reveal" id="tentang">
+      <div class="info-card">
+        <div class="info-icon" aria-hidden="true">!</div>
+        <div>
+          <h2>Mohon Maaf Atas Ketidaknyamanannya</h2>
+          <p>Website sedang dalam proses pemeliharaan. Silakan kembali beberapa saat lagi.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 5. FOOTER ===== -->
+  <footer class="footer reveal" id="kontak">
+    <p>© <span id="year">2026</span> Dinas Pekerjaan Umum dan Penataan Ruang</p>
+    <p class="tagline">Membangun Infrastruktur, Melayani Masyarakat</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
